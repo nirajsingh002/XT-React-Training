@@ -1,0 +1,13 @@
+#endpoint: ${env:PRISMA_ENDPOINT}
+endpoint: https://us1.prisma.sh/nirajsingh002-596cb8/sick-fits/dev
+datamodel: datamodel.prisma
+# secret: ${env:PRISMA_SECRET}
+generate:
+  - generator: graphql-schema
+    output: ./src/generated/prisma.graphql
+# hooks:
+#   post-deploy:
+#     - graphql get-schema -p prisma
+hooks:
+  post-deploy:
+    - prisma generate
