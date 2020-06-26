@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Remove matched Element</h1>
+    <script>
+
+        const comments = [
+            {id: 1, text: "test1"},
+            {id: 2, text: "test2"},
+            {id: 3, text: "test3"},
+            {id: 4, text: "test4"},
+        ]
+
+        const id = 2;
+        const commentIndex = comments.findIndex(comment => comment.id === id);
+
+        const newComments = [...comments.slice(0,commentIndex), ...comments.slice(commentIndex + 1)];
+
+        console.log(newComments);
+
+    </script>
+</body>
+</html>

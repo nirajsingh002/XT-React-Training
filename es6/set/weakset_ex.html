@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeakSet</title>
+</head>
+<body>
+    <h1>WeakSet</h1>
+    <script>
+        let dog1 = {name: 'Snikers', age: 3};
+        let dog2 = {name: 'Sunny', age: 1};
+
+        const weakSauce = new WeakSet([dog1, dog2]);
+
+        console.log('weakSauce', weakSauce);
+    </script>
+</body>
+</html>

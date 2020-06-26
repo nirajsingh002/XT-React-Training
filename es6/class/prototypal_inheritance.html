@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Prototypal Inheritance</h1>
+    <script>
+        function Dog(name, breed) {
+            this.name = name;
+            this.breed = breed;
+        }
+
+        Dog.prototype.bark = function() {
+            console.log(`Bark Bark! My name is ${this.name}`);
+        }
+
+        const snickers = new Dog('Snickers', 'King Charles');
+
+        console.log(snickers);
+    </script>
+</body>
+</html>

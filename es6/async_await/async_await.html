@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Await Example</title>
+</head>
+<body>
+    <h1>Async Await Example</h1>
+    <script>
+        function breathe(amount) {
+            return new Promise((resolve, reject) => {
+                if(amount < 500) {
+                    reject('That is to small of a value');
+                }
+                setTimeout(() => resolve(`Done for ${amount} ms`), amount);
+            })
+        }
+
+        async function go() {
+            try {
+                console.log('start');
+                const res = await breathe(1000);
+                console.log(res);
+                const res1 = await breathe(300);
+                console.log(res1);
+                console.log('end');
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        go();
+    </script>
+</body>
+</html>

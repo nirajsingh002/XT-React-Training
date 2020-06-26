@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+    <h1>Build our own Promises</h1>
+    <script>
+        const p = new Promise( (resolve, reject) => {
+            setTimeout(() => {
+                reject(Error('Err: Wes isn\'t cool'));
+            })
+        })
+
+        p
+         .then(data => {
+             console.log(data);
+         })
+         .catch(err => {
+             console.error(err);
+         })
+    </script>
+</body>
+</html>

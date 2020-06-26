@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Symbols</h1>
+    <script>
+        const person = {
+                        [Symbol('mark')]: {grade: 1},
+                        [Symbol('olivia')]: {grade: 2},
+                        [Symbol('olivia')]: {grade: 3}
+                        }
+            for (name in person) {
+                console.log(name);
+            }
+
+            const syms = Object.getOwnPropertySymbols(person);
+            const data = syms.map(sym => person[sym]);
+            console.log(data);
+    </script>
+</body>
+</html>
