@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Re-assessment 22nd May 2020</title>
+</head>
+<body>
+    <h1>Re-assessment 22nd May 2020</h1>
+    <script>
+        // 1.
+        var firstName = 'Mike';
+
+        var person = {
+            firstName: 'Jordan',
+            printName: () => this.firstName
+        }
+
+        console.log(person.printName());
+
+        // 2.
+        function* plusTen(number) {
+            return yield number+10;
+        }
+
+        var number = 10;
+        var plunNumber = plusTen(number);
+        console.log(plunNumber.next());
+
+        // 3.
+        var fruits = ['Apple', 'Banana'];
+        Array.prototype.getName = (index) => this[index];
+
+        console.log(fruits.getName(0));
+
+        // 4. 
+        const fruits1 = ['Apple', 'Banana'];
+
+        Array.prototype.getFruitsName = function(i) {
+            return {
+                readName: () => this[i]
+            }
+        }
+        console.log(fruits1.getFruitsName(1).readName());
+
+    </script>
+</body>
+</html>

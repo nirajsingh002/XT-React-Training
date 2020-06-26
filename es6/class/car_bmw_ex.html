@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Class Car example</h1>
+    <script>
+        class Car {
+            constructor(wheel) {
+                this.wheel = wheel || 4
+            }
+            getDetails = function() {
+                console.log(`Get car details brand: ${this.getBrand()}, wheel: ${this.wheel}`);
+            }
+        }
+
+        class Model extends Car {
+            constructor(brand) {
+                super();
+                this.brand = brand || 'Maruti';
+            }
+
+            getBrand() {
+                return this.brand;
+            }
+        }
+
+        const modelObj = new Car(4);
+        console.log(modelObj.getDetails()) // Uncaught TypeError: this.getBrand is not a function
+    </script>
+</body>
+</html>

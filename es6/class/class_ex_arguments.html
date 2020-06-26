@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Class: static method, setter and getter</h1>
+    <script>
+        class Dog {
+            constructor(name, breed) {
+                this.name = arguments[0];
+                this.breed = arguments[1];
+            }
+            bark() {
+                console.log(`Bark Bark! My name is ${this.name}`);
+            }
+            static info() {
+                console.log('A dog is better than a cat by 10 times');
+            }
+            get description() {
+                return `${this.name} is a ${this.breed} type of dog`;
+            }
+            set nicknames(value) {
+                this.nick = value.trim();
+            }
+            get nicknames() {
+                return this.nick;
+            }
+        }
+        
+        Dog.prototype.test = function() {
+            console.log('test', this.name, this.breed)
+        }
+        const snickers = new Dog('Snickers', 'King Charles');
+
+        console.log(snickers);
+        console.log(Dog.info());
+        console.log(snickers.nicknames);
+        console.log(snickers.test());
+        
+
+    </script>
+</body>
+</html>

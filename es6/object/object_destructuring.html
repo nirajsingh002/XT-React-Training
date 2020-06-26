@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object destructuring</title>
+</head>
+<body>
+    <h1>Object destructuring</h1>
+    <script>
+        const person = {
+            name: 'Brendan Eich',
+            city: 'Delhi',
+            job: {
+                title: 'Software Technologist',
+                company: 'Mozilla Corporation'
+            }
+        }
+
+        const {name:name1, job: {title, ...deepreset}, ...rest} = person;
+        console.log(name, name1, title)
+        console.log(title, deepreset)
+    </script>
+</body>
+</html>

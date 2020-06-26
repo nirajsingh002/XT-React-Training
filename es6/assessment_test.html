@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment Test</title>
+</head>
+<body>
+    <h1>Assessment Test</h1>
+    <script>
+        // 1. array find and search
+        const arrayValue = [1, 2, 44, 11, 34];
+        console.log(arrayValue.find(val => val > 29 ));
+
+        // 2. Set
+        const setArray = new Set([1,2,3,4,3,4])
+        const [a,,,,e,f] = setArray;
+        console.log(a,e,f);
+
+        // 3. class Inheritance
+        class Car {
+            constructor() {
+                this.wheel = 4;
+            }
+            getInfo() {
+                console.log(`Car details ${this.brand} has ${this.wheel}`)
+            }
+        }
+
+        class Brand extends Car {
+            constructor(brand) {
+                // super must be there to access this of parent class
+                super();
+                this.brand = brand || 'Maruti'
+            }
+        }
+
+        const brandObj = new Brand('BMW', '4');
+        console.log(brandObj.getInfo());
+
+        // 4. what will the output?
+        const fruits = ['Apple', 'Banana'];
+
+        Array.prototype.getName = function(i) {
+            return this[i];
+        }
+
+        console.log(fruits.getName(0)); // Apple
+
+        // 5. Are Symbol properties in Object iterable?
+        
+        /* https://flaviocopes.com/javascript-symbols/
+            Symbols are not enumerated, which means that they do not get included in a for..of or for..in loop ran upon an object.
+
+            Symbols are not part of the Object.keys() or Object.getOwnPropertyNames() result.
+
+            You can access all the symbols assigned to an object using the Object.getOwnPropertySymbols() method. */
+            const NAME = Symbol()
+            const person = {
+                [NAME]: 'Flavio',
+                age: 21
+            }
+            console.log(Object.keys(person));
+        // 6. Object.create is refer the same object
+
+            let person1 = {
+                name: 'Ram',
+                city: 'Delhi'
+            }
+
+            let newPerson1= Object.create(person1);
+            console.log(newPerson1.name)
+            person1.name = 'Shyam';
+            console.log(newPerson1.name)
+            newPerson1.name = 'Krishna';
+            console.log(newPerson1.name)
+        // 7. What will be the output of below code?
+            var y = 1, x = y = typeof x;
+            console.log('x---', x);
+
+        // 8. What will be the output of below code?
+        var foo = {
+            bar: function() { return this.baz; },
+            baz: 1
+        };
+
+        (function(){
+            return typeof arguments[0]();
+        })(foo.bar); // undefined because the scope of this is lost
+
+        var foo1 = {
+                bar: function(){ return this.baz; },
+                baz: 1
+            }
+            typeof (fee = foo1.bar)();// undefined
+
+            var x = 1;
+                if (function f(){}) {
+                    x += typeof f;
+                }
+                console.log(x); // 1undefined
+
+                var x = [typeof x, typeof y][1];
+                console.log(typeof typeof x); // string
+
+                (function(foo){
+                    console.log('foo', foo.bar);
+                    return typeof foo.bar;
+                })({ foo: { bar: 1 } }); // undefined
+
+                (function f(){
+                    function f(){ return 1; }
+                    return f();
+                    function f(){ return 2; }
+                })(); // 2
+                function f1(){ return f1; }
+                console.log(new f1() instanceof f1); // false
+
+                with (function(x, undefined){}) length;
+
+                var x = 3;
+                var foo2 = {
+                    x: 2,
+                    baz: {
+                        x: 1,
+                        bar: function() {
+                            return this.x;
+                        }
+                    }
+                }
+
+                var go = foo2.baz.bar;
+
+                console.log('go', go());
+                console.log('foo.baz.bar', foo2.baz.bar());
+
+
+                var x = 0;
+                function foo3() {
+                    x++;
+                    this.x = x;
+                    return foo;
+                }
+                // var bar = new new foo3; // Uncaught TypeError: (intermediate value) is not a constructor
+                // console.log(bar.x);
+
+
+                function foo4(a, b) {
+                    arguments[1] = 2;
+                    console.log(arguments);
+                    alert(b);
+                }
+
+
+    </script>
+</body>
+</html>

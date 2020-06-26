@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Generator Example</h1>
+    <script>
+        function* myGenerator(org) {
+            const firstYield = yield "First run";
+            const secondYield = yield "Second run";
+            console.log(firstYield);
+            const thirdYiled = yield "Third run";
+            console.log(thirdYiled);
+            return "Return";
+        }
+
+        const dataGen = myGenerator('Sapient');
+        dataGen.next("1");
+        dataGen.next("2");
+        dataGen.next("3");
+        console.log(dataGen.next("4").value);
+        console.log(dataGen.next("5").value);
+
+    </script>
+</body>
+</html>

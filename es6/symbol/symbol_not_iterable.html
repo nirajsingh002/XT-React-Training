@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Symbol Iterable</h1>
+    <script>
+        const fruites1 = Symbol('Apple');
+        const fruites2 = Symbol('Banana');
+        const fruites = {
+            [fruites1]: 'Appple',
+            [fruites2]: 'Banana',
+            cities: 'Delhi'
+        }
+
+        fruites["vegitables"] = 'Tomato';
+
+        console.log(Object.keys(fruites));
+
+
+    </script>
+</body>
+</html>

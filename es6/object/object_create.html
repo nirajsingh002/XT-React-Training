@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object.create</title>
+</head>
+<body>
+    <h1>Object.create</h1>
+    <script>
+        const person = {
+            name: 'Brendan Eich',
+            title: 'Creator of JavaScript '
+        }
+
+        const person1 = Object.create({
+            name: 'Brendan Eich',
+            title: 'Creator of JavaScript '
+        });
+        
+        // for in iterate over the prototype properties
+        for(const prop in person1 ) {
+            console.log('for in', prop);
+        }
+
+        // Object.keys does not iterate over the prototype properties
+        Object.keys(person1).map(prop => console.log('Object.keys', prop));
+    </script>
+</body>
+</html>

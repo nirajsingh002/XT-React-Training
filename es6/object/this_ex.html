@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normal and Arrow function this context example</title>
+</head>
+
+<body>
+    <h1>Normal and Arrow function this context example</h1>
+    <script>
+        // normal function
+        const obj1 = {
+            outer: function () {
+                const self1 = this
+
+                return function inner1() {
+                    const self2 = this
+
+                    return function inner2() {
+                        const self3 = this
+                        console.log('self1', self1);
+                        console.log('self2', self2);
+                        console.log('self3', self3);
+                        console.log(self1 !== self3)
+                        console.log(self2 !== self3)
+                        console.log(self1 === self2)
+                        console.log(self2 !== self3)
+                    }
+                }
+            }
+        }
+
+        // obj1.outer()()();
+
+
+        const obj2 = {
+            outer: function () {
+                const self1 = this
+
+                const inner1 = () => {
+                    const self2 = this
+
+                    const inner2 = () => {
+                        const self3 = this
+                        console.log('self1', self1);
+                        console.log('self2', self2);
+                        console.log('self3', self3);
+                    }
+                    inner2()
+                }
+                inner1()
+            }
+        }
+
+        obj2.outer()
+    </script>
+</body>
+
+</html>

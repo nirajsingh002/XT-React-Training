@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor Example</title>
+</head>
+
+<body>
+    <h1>Constructor Example</h1>
+    <script>
+        class Animal {
+            constructor(noise) {
+                this.noise = noise
+            }
+
+            speak() {
+                console.log(this.noise)
+            }
+        }
+
+        class Dog extends Animal {
+            constructor(size) {
+                super('bark!')
+
+                this.size = size
+            }
+        }
+
+        const roger = new Dog('large')
+        console.log('roger', roger);
+    </script>
+</body>
+
+</html>
