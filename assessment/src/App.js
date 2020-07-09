@@ -4,6 +4,8 @@ import "./App.css";
 import ExPropsChildren from "./ExPropsChildren";
 import { ControlledComponentWithHooks } from "./ControlledComponentWithHooks";
 import ColorChanges from "./LifeCycle";
+import ParentWithEvent from "./ShouldComponentUpdateEX_withEvent";
+import ExampleOfMemo from "./ShouldComponentUpdate_withoutEvent";
 
 function App() {
   return (
@@ -27,11 +29,13 @@ function App() {
           Learn React
         </a>
       </header>
-      <ExPropsChildren>
+      {/* <ExPropsChildren>
         <span>Display: Inline</span>
       </ExPropsChildren>
       <ControlledComponentWithHooks />
-      <ColorChanges favcol="Yellow" />
+      <ColorChanges favcol="Yellow" /> */}
+      {/* <ParentWithEvent /> */}
+      <ExampleOfMemo />
     </div>
   );
 }
